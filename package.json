@@ -1,0 +1,30 @@
+{
+  "name": "video-downloader",
+  "version": "1.0.1",
+  "description": "A simple yt-dlp GUI",
+  "main": "main.js",
+  "author": {
+    "name": "udah emmanuel",
+    "email": "udahemma7@gmail.com"
+  },
+  "homepage": "https://github.com",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "type": "commonjs",
+  "build": {
+    "appId": "com.ytdlp.gui",
+    "icon": "assets/icon.png",
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "assets/icon.png"
+    }
+  },
+  "devDependencies": {
+    "electron": "^42.2.0",
+    "electron-builder": "latest"
+  }
+}

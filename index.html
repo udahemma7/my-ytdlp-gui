@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>video downloader</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #1e1e1e;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+      }
+
+      input {
+        width: 400px;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 6px;
+        border: none;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 10px 30px;
+        background: #82d5c8;
+        color: #000000;
+        border: none;
+        border-radius: 9999px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      select {
+        margin-top: 10px;
+        padding: 10px 14px;
+        font-size: 14px;
+        background: #82d5c8;
+        color: #000000;
+        border: 1px solid black;
+        border-radius: 9999px;
+      }
+
+      #output {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #aaaaaa;
+        white-space: pre-wrap;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>video downloader</h2>
+    <input type="text" id="url" placeholder="Paste video URL here" />
+    <input type="text" id="folder" placeholder="Save to..." readonly />
+    <button onclick="pickFolder()">Browse</button>
+    <select id="format">
+    <option value="video">Video (480p)</option>
+    <option value="audio">Audio only (M4a)</option>
+    </select>
+    <button onclick="startDownload()">Download</button>
+    <div id="output"></div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
