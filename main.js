@@ -4,11 +4,11 @@ const path = require('path')
 function createWindow() {
   const win = new BrowserWindow({
     width: 600,
-    height: 400,
+    height: 500,
     icon: path.join(__dirname, 'assets/icon.png'),
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false/
+      contextIsolation: false
     }
   })
   win.loadFile('index.html')
