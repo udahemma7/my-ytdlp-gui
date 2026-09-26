@@ -51,6 +51,12 @@
         white-space: pre-wrap;
         width: 400px;
       }
+
+      p {
+        margin: 4px;
+      }
+
+
     </style>
   </head>
   <body>
@@ -63,6 +69,8 @@
     <option value="audio">Audio only (M4a)</option>
     </select>
     <button onclick="startDownload()">Download</button>
+    <p>out of date?</p>
+    <button onclick="updateYtdlp()">Update</button>
     <div id="output"></div>
 
     <script src="renderer.js"></script>

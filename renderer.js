@@ -67,3 +67,28 @@ function startDownload() {
     }
   })
 }
+
+function updateYtdlp() {
+  const output = document.getElementById('output')
+  output.textContent = 'Checking for updates...\n'
+
+  const update = spawn('yt-dlp', ['-U'])
+
+  update.stdout.on('data', (data) => {
+    output.textContent += data.toString()
+  })
+
+  update.stderr.on('data', (data) => {
+    output.textContent += data.toString()
+  })
+
+  update.on('close', (code) => {
+    if (code === 0) {
+      output.textContent += '\n✅ Update check complete!'
+    } else {
+      output.textContent += '\n❌ Update failed.'
+    }
+  })
+}
+
+
