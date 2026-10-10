@@ -1,6 +1,13 @@
 const { spawn } = require('child_process')
 const { ipcRenderer } = require('electron')
 
+const fs = require('fs')
+const os = require('os')
+const path = require('path')
+
+const denoPath = path.join(os.homedir(), '.deno', 'bin', 'deno')
+const jsRuntime = fs.existsSync(denoPath) ? `deno:${denoPath}` : 'deno'
+
 function pickFolder() {
   ipcRenderer.invoke('pick-folder').then((folder) => {
     if (folder) {
@@ -29,7 +36,7 @@ function startDownload() {
         '--yes-playlist',
         '--progress',
         '--newline',
-        '--js-runtimes', 'deno:/home/udah-e/.deno/bin/deno',
+        '--js-runtimes', jsRuntime,
         '-o', `${folder}/%(title)s.%(ext)s`,
         url
       ]
@@ -39,7 +46,7 @@ function startDownload() {
         '--yes-playlist',
         '--progress',
         '--newline',
-        '--js-runtimes', 'deno:/home/udah-e/.deno/bin/deno',
+        '--js-runtimes', jsRuntime,
         '-o', `${folder}/%(title)s.%(ext)s`,
         url
       ]
