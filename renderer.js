@@ -34,7 +34,9 @@ function startDownload() {
         url
       ]
     : [
-        '-f', 'best[height<=480]',
+        '-f', `bestvideo[height<=${format}]+bestaudio/best[height<=${format}]`,
+        '--merge-output-format', 'mp4',
+        '--yes-playlist',
         '--progress',
         '--newline',
         '--js-runtimes', 'deno:/home/udah-e/.deno/bin/deno',
