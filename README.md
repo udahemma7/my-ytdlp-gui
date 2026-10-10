@@ -116,7 +116,7 @@ This is a personal-use wrapper around yt-dlp. It does not host or distribute any
 
 **LICENSE**
 
-realesed under the MIT license
+released under the MIT license (see license)
 
 **BUILT WITH**
 
